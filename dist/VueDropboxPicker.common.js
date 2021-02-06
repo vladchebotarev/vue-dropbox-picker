@@ -783,10 +783,7 @@ var DropboxPickervue_type_script_lang_ts_DropboxPicker = /** @class */ (function
         var _this = this;
         if (window.Dropbox) {
             this.scriptLoaded = true;
-            this.dropboxChooserIsSupported = window.Dropbox.isBrowserSupported();
-            if (!this.dropboxChooserIsSupported) {
-                console.warn('VueDropboxPicker: This browser is not supported');
-            }
+            this.dropboxChooserIsSupported = true;
         }
         else {
             var dropBoxScript = document.createElement('script');
