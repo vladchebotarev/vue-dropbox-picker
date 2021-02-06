@@ -1,5 +1,5 @@
 <template>
-  <div v-if="scriptLoaded && dropboxChooserIsSupported" @click="openChooser">
+  <div @click="openChooser">
       <slot/>
       <button v-if="!this.$slots.default">Open dropbox picker</button>
   </div>
