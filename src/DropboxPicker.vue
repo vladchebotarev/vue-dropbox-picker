@@ -56,6 +56,11 @@ export default class DropboxPicker extends Vue {
   private mounted(): void {
     if (window.Dropbox) {
       this.scriptLoaded = true
+      this.dropboxChooserIsSupported = window.Dropbox!.isBrowserSupported()
+
+      if (!this.dropboxChooserIsSupported) {
+        console.warn('VueDropboxPicker: This browser is not supported')
+      }
     } else {
       const dropBoxScript = document.createElement('script')
       dropBoxScript.onload = () => {
